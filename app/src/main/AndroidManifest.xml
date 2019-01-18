@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mojodigi.filehunt">
+
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+
+    <application
+        android:name="com.mojodigi.filehunt.Application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:theme="@style/MainActivityTheme" android:name="com.mojodigi.filehunt.MainActivity" android:screenOrientation="portrait"  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--<activity android:name="com.mojodigi.filehunt.MainActivity" android:screenOrientation="portrait"></activity>-->
+
+        <activity android:name="com.mojodigi.filehunt.Category_Explore_Activity" android:screenOrientation="portrait"></activity>
+
+        <activity android:name="com.mojodigi.filehunt.PhotosActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.VideoActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.AudioActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.DocsActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.AnimationActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.ApkActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.DownloadActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.RecentActivityRe" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.mojodigi.filehunt.ZipActivityRe" android:screenOrientation="portrait"></activity>
+        <activity  android:theme="@style/AppTheme.NoActionBar" android:name="com.mojodigi.filehunt.Activity_Stotrage" android:screenOrientation="portrait"></activity>
+
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.mojodigi.filehunt.Media_VdoActivity" android:configChanges="orientation|keyboard|keyboardHidden"></activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.mojodigi.filehunt.Media_AdoActivity" android:screenOrientation="portrait"></activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.mojodigi.filehunt.Media_ImgActivity" android:screenOrientation="portrait"></activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.mojodigi.filehunt.Media_InfoActivity" android:screenOrientation="portrait"></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+
+
+
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+
+
+    </application>
+
+</manifest>

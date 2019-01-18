@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bckimg"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:background="@drawable/bckimg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentInsetStartWithNavigation="0.0dip"
+                app:layout_scrollFlags="scroll|enterAlways|snap|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp40"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="@dimen/dp10"
+                        android:paddingTop="@dimen/dp12"
+                        android:src="@mipmap/ic_app_logo" />
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp1"
+                        android:layout_marginRight="@dimen/dp50"
+                        android:gravity="left|center"
+                        android:paddingTop="@dimen/dp5"
+                        android:text="@string/app_name"
+                        android:textColor="#ff202124"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/content_main"
+                layout="@layout/content_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/addhoster" />
+
+            <RelativeLayout
+                android:id="@+id/addhoster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    ads:adSize="SMART_BANNER"
+                    ads:adUnitId="@string/banner_add_id"></com.google.android.gms.ads.AdView>
+
+
+                <RelativeLayout
+
+                    android:id="@+id/adMobView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/smaaToAddContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <RelativeLayout
+        android:background="@drawable/custom_ripple"
+        android:id="@+id/container_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginLeft="@dimen/dp20"
+            android:id="@+id/cat_Icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="@dimen/dp45"
+            android:layout_height="@dimen/dp45" />
+        <TextView
+            android:id="@+id/catName"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/cat_Icon"
+            style="@style/TextViewStyle1"
+            android:text="Images"
+            />
+        <View
+
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_toRightOf="@+id/cat_Icon"
+            android:layout_alignParentBottom="true"
+            style="@style/Divider"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
